@@ -11,9 +11,7 @@ converts that into an xml document
   The xml declaration and the root element are being printed on the same line
 
   The problem is most probably in the serialize method
-- Using the StreamingMarkupBuilder, it is not possible to add the namesapce
-
-  "gml:id":"glider-0123"
+- 
 
 
 # Code status
