@@ -2,13 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3357195-a442-49d7-a09b-27e1b909ffc8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_xlson_groovycsv_groovycsv_1_3.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Converting-GeoJSON-to-XML.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Converting-GeoJSON-to-XML.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GeoJSON-XML-Conversion.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/GeoJSON-XML-Conversion.groovy" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/sample6.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample6.groovy" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -19,17 +30,23 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Groovy/groovy-3.0.7/lib/extras-jaxb" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
-  <component name="RunManager" selected="Groovy.sample6">
-    <configuration name="Sample2" type="GroovyScriptRunConfiguration" factoryName="Groovy" temporary="true">
+  <component name="RunManager" selected="Groovy.GeoJSON-XML-Conversion">
+    <configuration name="GeoJSON-XML-Conversion" type="GroovyScriptRunConfiguration" factoryName="Groovy" temporary="true">
       <module name="Converting-GeoJSON-to-XML" />
-      <setting name="path" value="file://$PROJECT_DIR$/src/Sample2.groovy" />
+      <setting name="path" value="file://$PROJECT_DIR$/src/GeoJSON-XML-Conversion.groovy" />
       <setting name="vmparams" value="" />
       <setting name="params" value="" />
       <setting name="workDir" value="file://$PROJECT_DIR$/src" />
@@ -38,9 +55,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="sample4" type="GroovyScriptRunConfiguration" factoryName="Groovy" temporary="true">
+    <configuration name="ReadingCSV" type="GroovyScriptRunConfiguration" factoryName="Groovy" temporary="true">
       <module name="Converting-GeoJSON-to-XML" />
-      <setting name="path" value="file://$PROJECT_DIR$/src/sample4.groovy" />
+      <setting name="path" value="file://$PROJECT_DIR$/src/ReadingCSV.groovy" />
       <setting name="vmparams" value="" />
       <setting name="params" value="" />
       <setting name="workDir" value="file://$PROJECT_DIR$/src" />
@@ -49,9 +66,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="sample5" type="GroovyScriptRunConfiguration" factoryName="Groovy" temporary="true">
+    <configuration name="Sample1" type="GroovyScriptRunConfiguration" factoryName="Groovy" temporary="true">
       <module name="Converting-GeoJSON-to-XML" />
-      <setting name="path" value="file://$PROJECT_DIR$/src/sample5.groovy" />
+      <setting name="path" value="file://$PROJECT_DIR$/src/Sample1.groovy" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="file://$PROJECT_DIR$/src" />
+      <setting name="debug" value="false" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="nercVocabularyDictionary" type="GroovyScriptRunConfiguration" factoryName="Groovy" temporary="true">
+      <module name="Converting-GeoJSON-to-XML" />
+      <setting name="path" value="file://$PROJECT_DIR$/src/nercVocabularyDictionary.groovy" />
       <setting name="vmparams" value="" />
       <setting name="params" value="" />
       <setting name="workDir" value="file://$PROJECT_DIR$/src" />
@@ -73,10 +101,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Groovy.GeoJSON-XML-Conversion" />
+        <item itemvalue="Groovy.Sample1" />
         <item itemvalue="Groovy.sample6" />
-        <item itemvalue="Groovy.sample5" />
-        <item itemvalue="Groovy.sample4" />
-        <item itemvalue="Groovy.Sample2" />
+        <item itemvalue="Groovy.ReadingCSV" />
+        <item itemvalue="Groovy.nercVocabularyDictionary" />
       </list>
     </recent_temporary>
   </component>

@@ -52,7 +52,7 @@ ArrayList LineStringCoordinates = geoJson.features[0].geometry.coordinates
 // LineStringCoordinates.forEach(element -> println(element))
 //println LineStringCoordinates[1][1]
 
-
+// Providing IDs
 def gliderID = "glider-" + UUID.randomUUID().toString().substring(0,7)
 def phenomenonTimeID = "phenomenonTime-" + UUID.randomUUID().toString().substring(0,7)
 def resultTimeID = "resultTime-" + UUID.randomUUID().toString().substring(0,7)
