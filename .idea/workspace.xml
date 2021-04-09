@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3357195-a442-49d7-a09b-27e1b909ffc8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/com_xlson_groovycsv_groovycsv_1_3.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Converting-GeoJSON-to-XML.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Converting-GeoJSON-to-XML.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GeoJSON-XML-Conversion.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/GeoJSON-XML-Conversion.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample6.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample6.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReadingCSV.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sample1.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sample2.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sample3.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nercVocabularyDictionary.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/nercVocabularyDictionaryJava.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample4.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample5.groovy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample6.groovy" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
