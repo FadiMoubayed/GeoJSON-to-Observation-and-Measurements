@@ -68,6 +68,10 @@ def xml = new MarkupBuilder(writer)
 def outputPath = "/home/fadi/DataX1/University/WWU/WWU 5/Task 3/Output XML files/om_OM_Observation.xml"
 def fileWriter = new FileWriter(outputPath)
 
+// Link to the file on the FTP server
+String linkFTP = "http://www.ifremer.fr/co/ego/ego/v2/amerigo/amerigo_20130515/"
+
+
 // Extracting attributes from the GeoJSON file to be used in the xml document
 
 // Extracting the time period of the entire mission
@@ -84,7 +88,9 @@ def resultTimeID = "resultTime-" + UUID.randomUUID().toString().substring(0,7)
 def samplingCurveID = "samplingCurve-" + UUID.randomUUID().toString().substring(0,7)
 def lineStringID = "lineString-" + UUID.randomUUID().toString().substring(0,7)
 
-// Creating the xml file
+
+
+// Creating the xml file om:OM_Observation
 xml.'om:OM_Observation'('gml:id':gliderID,
         'xmlns:gml':'http://www.opengis.net/gml/3.2',
         'xmlns:om':'http://www.opengis.net/om/2.0',
@@ -109,6 +115,9 @@ xml.'om:OM_Observation'('gml:id':gliderID,
         }
     }
 
+    // How should the link be provided here??????
+    'om:procedure'('xlink:href':"https://link-to-sensorml")
+
     'om:featureOfInterest'{
         'sams:SF_SpatialSamplingFeature'('gml:id':samplingCurveID){
             // Check for the value here!!! SamplingCurve1
@@ -125,6 +134,8 @@ xml.'om:OM_Observation'('gml:id':gliderID,
         }
 
     }
+
+    'om:result'('xlink:href':linkFTP , "xsi:type":"gml:ReferenceType")
 }
 
 println writer.toString()
@@ -159,8 +170,8 @@ System.out.println(res.toString());
 
 
 
-// Creating the xml file
-xmlOM_ObservedProperty.'swe:CompositePhenomenon'('xmlns:swe':'http://www.opengis.net/swe/2.0',
+// Creating the xml file OM_ObservedProperty
+xmlOM_ObservedProperty.'swe:CompositePhenomenon'('xmlns:swe':'http://www.opengis.net/swe/1.0.1',
         'xmlns:xlink':'http://www.w3.org/1999/xlink'
         //'xsi:schemaLocation':'http://www.opengis.net/swe/1.0.1 http://schemas.opengis.net/sweCommon/1.0.1/swe.xsd',
         //'gml:id':'composite6/',
@@ -174,3 +185,6 @@ xmlOM_ObservedProperty.'swe:CompositePhenomenon'('xmlns:swe':'http://www.opengis
 
 // Writing file to disk
 XmlUtil.serialize(writerOM_ObservedProperty.toString(),fileWriterOM_ObservedProperty)
+
+
+// Part 4
