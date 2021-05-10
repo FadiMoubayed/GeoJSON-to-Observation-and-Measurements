@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3357195-a442-49d7-a09b-27e1b909ffc8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GeoJSON-XML-Conversion.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/GeoJSON-XML-Conversion.groovy" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InsertSensor.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/InsertSensor.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InsertSensor.groovy" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,8 +99,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Groovy.GeoJSON-XML-Conversion" />
-        <item itemvalue="Groovy.testRelativePath" />
         <item itemvalue="Groovy.InsertSensor" />
+        <item itemvalue="Groovy.testRelativePath" />
         <item itemvalue="Groovy.Sample1" />
         <item itemvalue="Groovy.sample6" />
       </list>

@@ -52,10 +52,6 @@ for (line in csvData) {
     allVariabels.put(line.parameter_name, line.sdn_parameter_uri)
 }
 
-// Printing the hasmap values just for tesing
-allVariabels.forEach((key, value )-> println(key + " " +value));
-
-
 
 // Part 2
 
@@ -172,16 +168,13 @@ def fileWriterOM_ObservedProperty = new FileWriter(outputPathOM_ObservedProperty
 
 // Getting the variable names that are available in the metadata file
 ArrayList availableVariabels = geoJson.features[0].properties.variabels_names as ArrayList
-// Printing the arraylist just for testing
-availableVariabels.forEach(element -> println(element))
 
 // Getting the links to the Nerc vocabulary server of the avialable variable names
 // This code gets the variable names form the nerc collection (allVariabels map)
 Map<String, String> res = availableVariabels.stream()
         .filter(allVariabels::containsKey)
         .collect(Collectors.toMap(Function.identity(), allVariabels::get));
-// Printing just for testing
-System.out.println(res.toString());
+
 
 
 
@@ -204,7 +197,7 @@ XmlUtil.serialize(writerOM_ObservedProperty.toString(),fileWriterOM_ObservedProp
 
 // Part 4
 
-// Creating the XML for the om:observedProperty where the variable names available in the metadata file will be saved
+// Creating the XML for the InsertSensor
 def writerInsertSensor = new StringWriter()
 def xml_InsertSensor = new MarkupBuilder(writerInsertSensor)
 // The output file
@@ -227,12 +220,36 @@ xml_InsertSensor.'swes:InsertSensor'(
         'service':"SOS",
         'version':"2.0.0",
 ){
-    'swes:procedureDescriptionFormat'("http://www.opengis.net/sensorML/2.0")
+    'swes:procedureDescriptionFormat'("http://www.opengis.net/sensorml/2.0")
 
     // Should this be only the link or is it the whole xml sml:PhysicalSystem element in the example?
     // What should the gml id be?
+
+    /*
+    TODO: add the names of the available variables as keywords - check the example of the hydrophone Simon sent you
+    */
+
     'swes:procedureDescription'{
-        'sml:PhysicalSystem'('xsi:schemaLocation':'http://www.opengis.net/swes/2.0 http://schemas.opengis.net/swes/2.0/swesDescribeSensor.xsd http://www.opengis.net/sensorml/2.0 http://schemas.opengis.net/sensorML/2.0/sensorML.xsd http://www.isotc211.org/2005/gmd http://schemas.opengis.net/iso/19139/20070417/gmd/gmd.xsd http://www.isotc211.org/2005/gco http://schemas.opengis.net/iso/19139/20070417/gco/gco.xsd http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd"', 'gml:id':InsertSensorGmlID)
+        'sml:PhysicalSystem'('xsi:schemaLocation':'http://www.opengis.net/swes/2.0 http://schemas.opengis.net/swes/2.0/swesDescribeSensor.xsd http://www.opengis.net/sensorml/2.0 http://schemas.opengis.net/sensorML/2.0/sensorML.xsd http://www.isotc211.org/2005/gmd http://schemas.opengis.net/iso/19139/20070417/gmd/gmd.xsd http://www.isotc211.org/2005/gco http://schemas.opengis.net/iso/19139/20070417/gco/gco.xsd http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd"', 'gml:id':InsertSensorGmlID){
+            mkp.comment "What could the gml description be here??"
+            'gml:description'('description')
+
+            'sml:keywords'{
+                'sml:KeywordList'{
+                    mkp.comment "should this be the names of the variables or the link to the vocabulary server??"
+                    /*
+                    // Providing the links to the Nerc Vocabulary server
+                    for (String key: res.keySet()) {
+                        'sml:keyword'(res.get(key))
+                    }
+                     */
+                    // providing the names of the variables available in the Nerc Vocabulary server
+                    for (Map.Entry<String, String> entry : res) {
+                        'sml:keyword'(entry.getKey())
+                    }
+                }
+            }
+        }
     }
 
     mkp.comment "This should be replaced with the real link once the app is hosted"
