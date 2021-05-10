@@ -39,7 +39,7 @@ xml_InsertSensor.'swes:InsertSensor'(
     //should I provide the links with xlink:href or just the link?
     'swes:metadata'{
         'sos:SosInsertionMetadata'{
-            'sos:observationType'('http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Observation')
+            'sos:observationType'('http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_ReferenceObservation')
             'sos:featureOfInterestType'('http://www.opengis.net/def/samplingFeatureType/OGC-OM/2.0/SF_SamplingCurve')
         }
 

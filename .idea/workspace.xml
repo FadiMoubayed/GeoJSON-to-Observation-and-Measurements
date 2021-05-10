@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a3357195-a442-49d7-a09b-27e1b909ffc8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GeoJSON-XML-Conversion.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/GeoJSON-XML-Conversion.groovy" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InsertSensor.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/InsertSensor.groovy" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,12 +37,12 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$USER_HOME$/Groovy/groovy-3.0.7/lib/extras-jaxb" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.11602211" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
-  <component name="RunManager" selected="Groovy.InsertSensor">
+  <component name="RunManager" selected="Groovy.GeoJSON-XML-Conversion">
     <configuration name="GeoJSON-XML-Conversion" type="GroovyScriptRunConfiguration" factoryName="Groovy" temporary="true">
       <module name="Converting-GeoJSON-to-XML" />
       <setting name="path" value="file://$PROJECT_DIR$/src/GeoJSON-XML-Conversion.groovy" />
@@ -55,17 +57,6 @@
     <configuration name="InsertSensor" type="GroovyScriptRunConfiguration" factoryName="Groovy" temporary="true">
       <module name="Converting-GeoJSON-to-XML" />
       <setting name="path" value="file://$PROJECT_DIR$/src/InsertSensor.groovy" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workDir" value="file://$PROJECT_DIR$/src" />
-      <setting name="debug" value="false" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ReadingCSV" type="GroovyScriptRunConfiguration" factoryName="Groovy" temporary="true">
-      <module name="Converting-GeoJSON-to-XML" />
-      <setting name="path" value="file://$PROJECT_DIR$/src/ReadingCSV.groovy" />
       <setting name="vmparams" value="" />
       <setting name="params" value="" />
       <setting name="workDir" value="file://$PROJECT_DIR$/src" />
@@ -96,13 +87,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="testRelativePath" type="GroovyScriptRunConfiguration" factoryName="Groovy" temporary="true">
+      <module name="Converting-GeoJSON-to-XML" />
+      <setting name="path" value="file://$PROJECT_DIR$/src/testRelativePath.groovy" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="file://$PROJECT_DIR$/src" />
+      <setting name="debug" value="false" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Groovy.InsertSensor" />
         <item itemvalue="Groovy.GeoJSON-XML-Conversion" />
+        <item itemvalue="Groovy.testRelativePath" />
+        <item itemvalue="Groovy.InsertSensor" />
         <item itemvalue="Groovy.Sample1" />
         <item itemvalue="Groovy.sample6" />
-        <item itemvalue="Groovy.ReadingCSV" />
       </list>
     </recent_temporary>
   </component>
@@ -116,5 +118,14 @@
       <updated>1614853437808</updated>
     </task>
     <servers />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand>
+      <path>
+        <item name="Converting-GeoJSON-to-XML" type="b2602c69:ProjectViewProjectNode" />
+        <item name="Converting-GeoJSON-to-XML" type="462c0819:PsiDirectoryNode" />
+      </path>
+    </expand>
+    <select />
   </component>
 </project>
