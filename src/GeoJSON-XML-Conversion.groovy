@@ -9,14 +9,6 @@ import java.util.stream.Collectors
 TODO put all the input and output files in one directory
  */
 
-/*
-This script is organised as the following:
-    1- The first part extracts the variable names form the Argo project Excel sheet
-    2- The second part creates the om:OM_Observation xml metadata file
-    3- The third part creates the om:observedProperty (the names of the variables available in the metadata file) xml file
-    which will be linked to om:OM_Observation xml file
-    4- The fourth part creates the InsertSensor xml request file
-*/
 
 // Part 1
 /*
@@ -99,54 +91,64 @@ String linkToSensorML = "https://link-to-sensorml"
 String linkToObservedProperty = "https://link-to-observerdproperties"
 
 // Creating the xml file om:OM_Observation
-xmlOM_Observation.'om:OM_Observation'('gml:id':gliderID,
+xmlOM_Observation.'sos:InsertObservation'(
+        'xmlns:sos':'http://www.opengis.net/sos/2.0',
         'xmlns:gml':'http://www.opengis.net/gml/3.2',
         'xmlns:om':'http://www.opengis.net/om/2.0',
         'xmlns:xlink':'http://www.w3.org/1999/xlink',
         'xmlns:sams': "http://www.opengis.net/samplingSpatial/2.0",
         'xmlns:sf':"http://www.opengis.net/sampling/2.0",
-        'xmlns:xsi':"http://www.w3.org/2001/XMLSchema‐instance"
+        'xmlns:xsi':"http://www.w3.org/2001/XMLSchema‐instance",
+        'service':"SOS",
+        'version':"2.0.0"
 ){
-    //'gml:description'("Mission track metadata")
-    'om:type'('xlink:href':"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_ReferenceObservation")
+    mkp.comment "Here goes the swes:assignedOffering from the InsertSensor response "
+    'sos:offering'('link-to-offering')
 
-    'om:phenomenonTime'{
-        'gml:TimePeriod'('gml:id':phenomenonTimeID){
-            'gml:beginPosition'(MissionStrartTime)
-            'gml:endPosition'(MissionEndTime)
-        }
-    }
+    'sos:observation'{
+        'om:OM_Observation'('gml:id':gliderID){
+            //'gml:description'("Mission track metadata")
+            'om:type'('xlink:href':"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_ReferenceObservation")
 
-    'om:resultTime'{
-        'gml:TimeInstant'('gml:id':resultTimeID){
-            'gml:timePosition'(MissionEndTime)
-        }
-    }
-
-    mkp.comment "This should be replaced with the real link once the app is hosted"
-    'om:procedure'('xlink:href':linkToSensorML)
-
-    mkp.comment "This should be replaced with the real link once the app is hosted"
-    'om:observedProperty'('xlink:href': linkToObservedProperty)
-
-    'om:featureOfInterest'{
-        'sams:SF_SpatialSamplingFeature'('gml:id':samplingCurveID){
-            // Check for the value here!!! SamplingCurve1
-            'gml:identifier'('codeSpace':'http://www.uncertweb.org', "SamplingCurve1")
-            'sf:type'('xlink:href':"http://www.opengis.net/def/samplingFeatureType/OGC-OM/2.0/SF_SamplingCurve")
-            'sf:sampledFeature'('xsi:nil':"true")
-            'sams:shape'{
-                'gml:LineString'('gml:id':lineStringID, 'srsName':"http://www.opengis.net/def/crs/EPSG/0/4326"){
-                    geoJson.features[0].geometry.coordinates.each {
-                        'gml:pos'(it[0] + " " + it[1])
-                    }
+            'om:phenomenonTime'{
+                'gml:TimePeriod'('gml:id':phenomenonTimeID){
+                    'gml:beginPosition'(MissionStrartTime)
+                    'gml:endPosition'(MissionEndTime)
                 }
             }
+
+            'om:resultTime'{
+                'gml:TimeInstant'('gml:id':resultTimeID){
+                    'gml:timePosition'(MissionEndTime)
+                }
+            }
+
+            mkp.comment "This should be replaced with the real link once the app is hosted"
+            'om:procedure'('xlink:href':linkToSensorML)
+
+            mkp.comment "This should be replaced with the real link once the app is hosted"
+            'om:observedProperty'('xlink:href': linkToObservedProperty)
+
+            'om:featureOfInterest'{
+                'sams:SF_SpatialSamplingFeature'('gml:id':samplingCurveID){
+                    // Check for the value here!!! SamplingCurve1
+                    'gml:identifier'('codeSpace':'http://www.uncertweb.org', "SamplingCurve1")
+                    'sf:type'('xlink:href':"http://www.opengis.net/def/samplingFeatureType/OGC-OM/2.0/SF_SamplingCurve")
+                    'sf:sampledFeature'('xsi:nil':"true")
+                    'sams:shape'{
+                        'gml:LineString'('gml:id':lineStringID, 'srsName':"http://www.opengis.net/def/crs/EPSG/0/4326"){
+                            geoJson.features[0].geometry.coordinates.each {
+                                'gml:pos'(it[0] + " " + it[1])
+                            }
+                        }
+                    }
+                }
+
+            }
+
+            'om:result'('xlink:href':linkFTP , "xsi:type":"gml:ReferenceType")
         }
-
     }
-
-    'om:result'('xlink:href':linkFTP , "xsi:type":"gml:ReferenceType")
 }
 
 //println writer.toString()
@@ -209,7 +211,7 @@ def InsertSensorGmlID = "InsertSensor-" + UUID.randomUUID().toString().substring
 
 
 
-// Creating the xml file OM_ObservedProperty
+// Creating the xml file for the InserSensor opertation
 xml_InsertSensor.'swes:InsertSensor'(
         'xmlns:swes':'http://www.opengis.net/swes/2.0',
         'xmlns:sos':'http://www.opengis.net/sos/2.0',
@@ -225,10 +227,6 @@ xml_InsertSensor.'swes:InsertSensor'(
     // Should this be only the link or is it the whole xml sml:PhysicalSystem element in the example?
     // What should the gml id be?
 
-    /*
-    TODO: add the names of the available variables as keywords - check the example of the hydrophone Simon sent you
-    */
-
     'swes:procedureDescription'{
         'sml:PhysicalSystem'('xsi:schemaLocation':'http://www.opengis.net/swes/2.0 http://schemas.opengis.net/swes/2.0/swesDescribeSensor.xsd http://www.opengis.net/sensorml/2.0 http://schemas.opengis.net/sensorML/2.0/sensorML.xsd http://www.isotc211.org/2005/gmd http://schemas.opengis.net/iso/19139/20070417/gmd/gmd.xsd http://www.isotc211.org/2005/gco http://schemas.opengis.net/iso/19139/20070417/gco/gco.xsd http://www.opengis.net/gml/3.2 http://schemas.opengis.net/gml/3.2.1/gml.xsd"', 'gml:id':InsertSensorGmlID){
             mkp.comment "What could the gml description be here??"
@@ -237,12 +235,6 @@ xml_InsertSensor.'swes:InsertSensor'(
             'sml:keywords'{
                 'sml:KeywordList'{
                     mkp.comment "should this be the names of the variables or the link to the vocabulary server??"
-                    /*
-                    // Providing the links to the Nerc Vocabulary server
-                    for (String key: res.keySet()) {
-                        'sml:keyword'(res.get(key))
-                    }
-                     */
                     // providing the names of the variables available in the Nerc Vocabulary server
                     for (Map.Entry<String, String> entry : res) {
                         'sml:keyword'(entry.getKey())
