@@ -16,8 +16,7 @@ and creates a hasmap that has the variable name as a key and the link to the voc
 
 //Setting the resources and output files
 // Providing the path to the metadata file
-// The CSV and the metadata GeoJson files are all provided in this file called resources
-String resources = "/home/fadi/DataX1/University/WWU/WWU 5/Task 3/resources/"
+// The CSV and the metadata GeoJson files are all provided in the resources file provided in the relative path
 
 // Providing the path to the output file where the xml files will be written
 String output = "/home/fadi/DataX1/University/WWU/WWU 5/Task 3/Output XML files/"
@@ -26,7 +25,8 @@ String output = "/home/fadi/DataX1/University/WWU/WWU 5/Task 3/Output XML files/
 import static com.xlson.groovycsv.CsvParser.parseCsv
 
 // Providing the path to the CSV file that contains the names of the variables
-String csvFilePath = resources + "CVS_unprocessed.csv"
+def csvFilePath = getClass().getResource('CVS_unprocessed.csv').toURI()
+
 
 // Parsing the csv file
 def csvFile = new File(csvFilePath)
@@ -47,13 +47,16 @@ for (line in csvData) {
 
 //Information about the file on disk
     // Link to the file on the FTP server
-    String linkFTP = "http://www.ifremer.fr/co/ego/ego/v2/wallis/wallis_20090125/"
+    String linkFTP = "http://www.ifremer.fr/co/ego/ego/v2/sg558/sg558_20130601/"
     // File name
-    String  fileName = "wallis_mooset01_R.nc_metadata.goejson"
+    String  fileName = "sg558_fram_jun2013_R.nc_metadata.goejson"
 
 // Parsing the GeoJSON file
-String geoJSONfilePath = resources + fileName
-def reader = new FileReader(geoJSONfilePath)
+// Getting the file's relative path
+def geoJSONfilePath = getClass().getResource(fileName).toURI()
+// Creating a Java File object from the relative path
+def fileToRead = new java.io.File(geoJSONfilePath)
+def reader = new FileReader(fileToRead)
 def geoJson = new JsonSlurper().parse(reader)
 def writerOM_Observation = new StringWriter()
 def xmlOM_Observation = new MarkupBuilder(writerOM_Observation)
@@ -230,7 +233,6 @@ xml_InsertSensor.'swes:InsertSensor'(
 
             'sml:keywords'{
                 'sml:KeywordList'{
-                    mkp.comment "should this be the names of the variables or the link to the vocabulary server??"
                     // providing the names of the variables available in the Nerc Vocabulary server
                     for (Map.Entry<String, String> entry : res) {
                         'sml:keyword'(entry.getKey())
