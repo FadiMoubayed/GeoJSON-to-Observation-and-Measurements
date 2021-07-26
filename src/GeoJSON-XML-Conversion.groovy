@@ -5,10 +5,6 @@ import groovy.xml.XmlUtil
 import java.util.function.Function
 import java.util.stream.Collectors
 
-/*
-TODO put all the input and output files in one directory
- */
-
 
 // Part 1
 /*
@@ -51,9 +47,9 @@ for (line in csvData) {
 
 //Information about the file on disk
     // Link to the file on the FTP server
-    String linkFTP = "http://www.ifremer.fr/co/ego/ego/v2/amerigo/amerigo_20130515/"
+    String linkFTP = "http://www.ifremer.fr/co/ego/ego/v2/wallis/wallis_20090125/"
     // File name
-    String  fileName = "amerigo_coconet_R.nc_metadata.goejson"
+    String  fileName = "wallis_mooset01_R.nc_metadata.goejson"
 
 // Parsing the GeoJSON file
 String geoJSONfilePath = resources + fileName
@@ -63,7 +59,7 @@ def writerOM_Observation = new StringWriter()
 def xmlOM_Observation = new MarkupBuilder(writerOM_Observation)
 
 // The output XML file
-def outputPath = output + "om_OM_Observation.xml"
+def outputPath = output + fileName +"_om_OM_Observation.xml"
 def fileWriter = new FileWriter(outputPath)
 
 
@@ -161,7 +157,7 @@ XmlUtil.serialize(writerOM_Observation.toString(),fileWriter)
 def writerOM_ObservedProperty = new StringWriter()
 def xmlOM_ObservedProperty = new MarkupBuilder(writerOM_ObservedProperty)
 // The output file
-def outputPathOM_ObservedProperty = output + "om_observedProperty.xml"
+def outputPathOM_ObservedProperty = output + fileName + "om_observedProperty.xml"
 def fileWriterOM_ObservedProperty = new FileWriter(outputPathOM_ObservedProperty)
 
 /*
@@ -203,7 +199,7 @@ XmlUtil.serialize(writerOM_ObservedProperty.toString(),fileWriterOM_ObservedProp
 def writerInsertSensor = new StringWriter()
 def xml_InsertSensor = new MarkupBuilder(writerInsertSensor)
 // The output file
-def outputPathInsertSensor = output +"InsertSensor.xml"
+def outputPathInsertSensor = output + fileName +"_InsertSensor.xml"
 def fileWriterInsertSensor = new FileWriter(outputPathInsertSensor)
 
 // GML ID
