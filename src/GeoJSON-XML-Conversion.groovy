@@ -2,6 +2,8 @@ import groovy.json.JsonSlurper
 import groovy.xml.MarkupBuilder
 import groovy.xml.XmlUtil
 
+import java.text.DateFormat
+import java.text.SimpleDateFormat
 import java.util.function.Function
 import java.util.stream.Collectors
 
@@ -49,7 +51,7 @@ for (line in csvData) {
     // Link to the file on the FTP server
     String linkFTP = "http://www.ifremer.fr/co/ego/ego/v2/sg558/sg558_20130601/"
     // File name
-    String  fileName = "sg558_fram_jun2013_R.nc_metadata.goejson"
+    String  fileName = "wallis_mooset01_R.nc_metadata.goejson"
 
 // Parsing the GeoJSON file
 // Getting the file's relative path
@@ -70,10 +72,19 @@ def fileWriter = new FileWriter(outputPath)
 
 // Extracting the time period of the entire mission
 String missionTimePeriod = geoJson.features[0].properties.Time_Period
-String MissionStrartTime = missionTimePeriod.substring(1,20)
-String MissionEndTime = missionTimePeriod.substring(23,missionTimePeriod.length() -1)
+String MissionStrartTimeString = missionTimePeriod.substring(1,20)
+String MissionEndTimeString = missionTimePeriod.substring(23,missionTimePeriod.length() -1)
 
+//Converting the date time format to Java format
+// Defining the original and target date-time format
+DateFormat orgignalFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
+DateFormat targetFormat = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss")
 
+// Parsing date-time to Java format
+Date MissionStrartTimeDate = orgignalFormat.parse(MissionStrartTimeString)
+Date MissionEndTimeDate = orgignalFormat.parse(MissionEndTimeString)
+String MissionStrartTime = targetFormat.format(MissionStrartTimeDate)
+String MissionEndTime = targetFormat.format(MissionEndTimeDate)
 
 // Providing IDs
 def gliderID = "glider-" + UUID.randomUUID().toString().substring(0,7)
@@ -84,7 +95,9 @@ def lineStringID = "lineString-" + UUID.randomUUID().toString().substring(0,7)
 
 //Providing the link to SensorML
 //Since the app is not hoseted, the actual link to the file cannot be provided.
-String linkToSensorML = "https://link-to-sensorml"
+String assignedOffering = "the-assigned-offering-from-InsertSensor"
+
+String assignedProcedure = "the-assigned-procedure-from-InsertSensor"
 
 //Providing the link to ObservedProperty
 String linkToObservedProperty = "https://link-to-observerdproperties"
@@ -97,12 +110,12 @@ xmlOM_Observation.'sos:InsertObservation'(
         'xmlns:xlink':'http://www.w3.org/1999/xlink',
         'xmlns:sams': "http://www.opengis.net/samplingSpatial/2.0",
         'xmlns:sf':"http://www.opengis.net/sampling/2.0",
-        'xmlns:xsi':"http://www.w3.org/2001/XMLSchema‐instance",
+        'xmlns:xsi':"http://www.w3.org/2001/XMLSchema-instance",
         'service':"SOS",
         'version':"2.0.0"
 ){
-    mkp.comment "Here goes the swes:assignedOffering from the InsertSensor response "
-    'sos:offering'('link-to-offering')
+    mkp.comment "Here goes the swes:assignedOffering from the InsertSensor response"
+    'sos:offering'(assignedOffering)
 
     'sos:observation'{
         'om:OM_Observation'('gml:id':gliderID){
@@ -122,8 +135,8 @@ xmlOM_Observation.'sos:InsertObservation'(
                 }
             }
 
-            mkp.comment "This should be replaced with the real link once the app is hosted"
-            'om:procedure'('xlink:href':linkToSensorML)
+            mkp.comment "Here goes the assignedProcedure from the InsertSensor response"
+            'om:procedure'('xlink:href':assignedProcedure)
 
             mkp.comment "This should be replaced with the real link once the app is hosted"
             'om:observedProperty'('xlink:href': linkToObservedProperty)
@@ -133,7 +146,8 @@ xmlOM_Observation.'sos:InsertObservation'(
                     // Check for the value here!!! SamplingCurve1
                     'gml:identifier'('codeSpace':'http://www.uncertweb.org', "SamplingCurve1")
                     'sf:type'('xlink:href':"http://www.opengis.net/def/samplingFeatureType/OGC-OM/2.0/SF_SamplingCurve")
-                    'sf:sampledFeature'('xsi:nil':"true")
+                    'sf:sampledFeature'('xlink:href':"urn:ogc:def:nil:OGC:unknown")
+
                     'sams:shape'{
                         'gml:LineString'('gml:id':lineStringID, 'srsName':"http://www.opengis.net/def/crs/EPSG/0/4326"){
                             geoJson.features[0].geometry.coordinates.each {

@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a3357195-a442-49d7-a09b-27e1b909ffc8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Converting-GeoJSON-to-XML.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Converting-GeoJSON-to-XML.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GeoJSON-XML-Conversion.groovy" beforeDir="false" afterPath="$PROJECT_DIR$/src/GeoJSON-XML-Conversion.groovy" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,9 +73,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="sample6" type="GroovyScriptRunConfiguration" factoryName="Groovy" temporary="true">
+    <configuration name="testConvertDate" type="GroovyScriptRunConfiguration" factoryName="Groovy" temporary="true">
       <module name="Converting-GeoJSON-to-XML" />
-      <setting name="path" value="file://$PROJECT_DIR$/src/sample6.groovy" />
+      <setting name="path" value="file://$PROJECT_DIR$/src/testConvertDate.groovy" />
       <setting name="vmparams" value="" />
       <setting name="params" value="" />
       <setting name="workDir" value="file://$PROJECT_DIR$/src" />
@@ -100,10 +98,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Groovy.GeoJSON-XML-Conversion" />
+        <item itemvalue="Groovy.testConvertDate" />
         <item itemvalue="Groovy.InsertSensor" />
         <item itemvalue="Groovy.testRelativePath" />
         <item itemvalue="Groovy.Sample1" />
-        <item itemvalue="Groovy.sample6" />
       </list>
     </recent_temporary>
   </component>
