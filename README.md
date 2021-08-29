@@ -42,17 +42,22 @@ This script is organized as the following:
   
        https://github.com/52North/SOS
   
-  - Once SOS is up and running, implement InsertSensor operation
+  - Once SOS is up and running, implement InsertSensor operation:
   
        Here the link to ObservedProperties file should be copied manually.
        
   - Once the InsertSensor has been implemented successfully, you will get a response with the following:
-  assignedOffering
-  assignedProcedure
+  
+      assignedOffering
+      
+      
+      assignedProcedure
 
-  - Implement the InsertObservation operation. Here you need to manually copy the assignedOffering and assignedProcedure into the InsertObservation request.
+  - Implement the InsertObservation operation:
+  
+      Here you need to manually copy the assignedOffering and assignedProcedure into the InsertObservation request.
 
-  Example files are provided in the Example files folder
+  Example files are provided in the Example files folder.
 
 
 
