@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<swe:CompositePhenomenon xmlns:swe="http://www.opengis.net/swe/1.0.1" xmlns:xlink="http://www.w3.org/1999/xlink">
-  <swe:component xlink:href="http://vocab.nerc.ac.uk/collection/P01/current/TEMPST01/"/>
-  <swe:component xlink:href="http://vocab.nerc.ac.uk/collection/P01/current/CPHLPR01/"/>
-  <swe:component xlink:href="http://vocab.nerc.ac.uk/collection/P01/current/PRESPR01/"/>
-  <swe:component xlink:href="http://vocab.nerc.ac.uk/collection/P01/current/CNDCST01/"/>
-  <swe:component xlink:href="http://vocab.nerc.ac.uk/collection/P01/current/TURBXXXX/"/>
-  <swe:component xlink:href="http://vocab.nerc.ac.uk/collection/P01/current/PSALST01/"/>
-</swe:CompositePhenomenon>

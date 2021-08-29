@@ -51,7 +51,7 @@ for (line in csvData) {
     // Link to the file on the FTP server
     String linkFTP = "http://www.ifremer.fr/co/ego/ego/v2/sg558/sg558_20130601/"
     // File name
-    String  fileName = "wallis_mooset01_R.nc_metadata.goejson"
+    String  fileName = "sg558_fram_jun2013_R.nc_metadata.goejson"
 
 // Parsing the GeoJSON file
 // Getting the file's relative path

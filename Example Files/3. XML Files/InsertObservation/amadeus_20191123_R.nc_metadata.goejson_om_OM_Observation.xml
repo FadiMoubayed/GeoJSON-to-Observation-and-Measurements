@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sos:InsertObservation xmlns:sos="http://www.opengis.net/sos/2.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:om="http://www.opengis.net/om/2.0" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sams="http://www.opengis.net/samplingSpatial/2.0" xmlns:sf="http://www.opengis.net/sampling/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" service="SOS" version="2.0.0">
+  <!-- Here goes the swes:assignedOffering from the InsertSensor response -->
+  <sos:offering>b6de96846a7ff410aa41bbac76b0f3550ee206e7fbbb09dbbb5660ebbf71911e/observations</sos:offering>
+  <sos:observation>
+    <om:OM_Observation gml:id="glider-5749a6d">
+      <om:type xlink:href="http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_ReferenceObservation"/>
+      <om:phenomenonTime>
+        <gml:TimePeriod gml:id="phenomenonTime-5e05f05">
+          <gml:beginPosition>2019-11-30T07:25:00</gml:beginPosition>
+          <gml:endPosition>2019-12-04T10:40:04</gml:endPosition>
+        </gml:TimePeriod>
+      </om:phenomenonTime>
+      <om:resultTime>
+        <gml:TimeInstant gml:id="resultTime-72f80fd">
+          <gml:timePosition>2019-12-04T10:40:04</gml:timePosition>
+        </gml:TimeInstant>
+      </om:resultTime>
+      <!-- Here goes the assignedProcedure from the InsertSensor response -->
+      <om:procedure xlink:href="b6de96846a7ff410aa41bbac76b0f3550ee206e7fbbb09dbbb5660ebbf71911e"/>
+      <!-- This should be replaced with the real link once the app is hosted -->
+      <om:observedProperty xlink:href="https://github.com/FadiMoubayed/Converting-GeoJSON-to-XML/blob/main/XML_Files/ObservedProperty/amadeus_20191123_R.nc_metadata.goejsonom_observedProperty.xml"/>
+      <om:featureOfInterest>
+        <sams:SF_SpatialSamplingFeature gml:id="samplingCurve-e660e40">
+          <gml:identifier codeSpace="http://www.uncertweb.org">SamplingCurve1</gml:identifier>
+          <sf:type xlink:href="http://www.opengis.net/def/samplingFeatureType/OGC-OM/2.0/SF_SamplingCurve"/>
+          <sf:sampledFeature xlink:href="urn:ogc:def:nil:OGC:unknown"/>
+          <sams:shape>
+            <gml:LineString gml:id="lineString-4fc7208" srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+              <gml:pos>17.79655118 -20.602267</gml:pos>
+              <gml:pos>17.79794926 -20.61704418</gml:pos>
+              <gml:pos>17.79794926 -20.61704418</gml:pos>
+              <gml:pos>17.79448222 -20.63485545</gml:pos>
+              <gml:pos>17.79448222 -20.63485545</gml:pos>
+              <gml:pos>17.78992241 -20.65197477</gml:pos>
+              <gml:pos>17.78992241 -20.65197477</gml:pos>
+              <gml:pos>17.78507364 -20.66937865</gml:pos>
+              <gml:pos>17.78507364 -20.66937865</gml:pos>
+              <gml:pos>17.77856569 -20.68575927</gml:pos>
+              <gml:pos>17.77856569 -20.68575927</gml:pos>
+              <gml:pos>17.77322922 -20.7029938</gml:pos>
+              <gml:pos>17.77322922 -20.7029938</gml:pos>
+              <gml:pos>17.76832504 -20.71900305</gml:pos>
+              <gml:pos>17.76832504 -20.71900305</gml:pos>
+              <gml:pos>17.76643688 -20.73698639</gml:pos>
+              <gml:pos>17.76643688 -20.73698639</gml:pos>
+              <gml:pos>17.76244602 -20.75408929</gml:pos>
+              <gml:pos>17.76244602 -20.75408929</gml:pos>
+              <gml:pos>17.75725011 -20.76928878</gml:pos>
+              <gml:pos>17.75725011 -20.76928878</gml:pos>
+              <gml:pos>17.75483633 -20.78722027</gml:pos>
+              <gml:pos>17.75483633 -20.78722027</gml:pos>
+              <gml:pos>17.75115232 -20.80449466</gml:pos>
+              <gml:pos>17.75115232 -20.80449466</gml:pos>
+              <gml:pos>17.74955982 -20.82230501</gml:pos>
+              <gml:pos>17.74955982 -20.82230501</gml:pos>
+              <gml:pos>17.74817367 -20.84028861</gml:pos>
+              <gml:pos>17.74817367 -20.84028861</gml:pos>
+              <gml:pos>17.74844477 -20.85787522</gml:pos>
+              <gml:pos>17.74844477 -20.85787522</gml:pos>
+              <gml:pos>17.75098281 -20.8757406</gml:pos>
+              <gml:pos>17.75098281 -20.8757406</gml:pos>
+              <gml:pos>17.75064089 -20.89344031</gml:pos>
+              <gml:pos>17.75064089 -20.89344031</gml:pos>
+              <gml:pos>17.75001354 -20.91147849</gml:pos>
+              <gml:pos>17.75001354 -20.91147849</gml:pos>
+              <gml:pos>17.75091712 -20.92926978</gml:pos>
+              <gml:pos>17.75091712 -20.92926978</gml:pos>
+              <gml:pos>17.75370575 -20.94728096</gml:pos>
+              <gml:pos>17.75370575 -20.94728096</gml:pos>
+              <gml:pos>17.754387 -20.96466311</gml:pos>
+              <gml:pos>17.754387 -20.96466311</gml:pos>
+              <gml:pos>17.7514041 -20.9825921</gml:pos>
+              <gml:pos>17.7514041 -20.9825921</gml:pos>
+              <gml:pos>17.74396982 -20.99835418</gml:pos>
+              <gml:pos>17.74396982 -20.99835418</gml:pos>
+              <gml:pos>17.73466593 -21.01281588</gml:pos>
+              <gml:pos>17.73466593 -21.01281588</gml:pos>
+              <gml:pos>17.73034236 -21.03047794</gml:pos>
+              <gml:pos>17.73034236 -21.03047794</gml:pos>
+              <gml:pos>17.72612149 -21.04661455</gml:pos>
+              <gml:pos>17.72612149 -21.04661455</gml:pos>
+              <gml:pos>17.72956107 -21.06435374</gml:pos>
+              <gml:pos>17.72956107 -21.06435374</gml:pos>
+              <gml:pos>17.73170339 -21.07558199</gml:pos>
+              <gml:pos>17.72487894 -21.07576142</gml:pos>
+              <gml:pos>17.72487894 -21.07576142</gml:pos>
+              <gml:pos>17.70590902 -21.07359859</gml:pos>
+              <gml:pos>17.70590902 -21.07359859</gml:pos>
+              <gml:pos>17.68754915 -21.07436975</gml:pos>
+              <gml:pos>17.68754915 -21.07436975</gml:pos>
+              <gml:pos>17.66846256 -21.07676453</gml:pos>
+              <gml:pos>17.66846256 -21.07676453</gml:pos>
+              <gml:pos>17.64939691 -21.0791829</gml:pos>
+              <gml:pos>17.64939691 -21.0791829</gml:pos>
+              <gml:pos>17.63057963 -21.07680918</gml:pos>
+              <gml:pos>17.63057963 -21.07680918</gml:pos>
+              <gml:pos>17.61258201 -21.0748339</gml:pos>
+              <gml:pos>17.61258201 -21.0748339</gml:pos>
+              <gml:pos>17.59418302 -21.08041664</gml:pos>
+              <gml:pos>17.59418302 -21.08041664</gml:pos>
+              <gml:pos>17.57689889 -21.0878521</gml:pos>
+              <gml:pos>17.57689889 -21.0878521</gml:pos>
+              <gml:pos>17.56011272 -21.09456646</gml:pos>
+              <gml:pos>17.56011272 -21.09456646</gml:pos>
+              <gml:pos>17.54120929 -21.09819067</gml:pos>
+              <gml:pos>17.54120929 -21.09819067</gml:pos>
+              <gml:pos>17.52331034 -21.10381623</gml:pos>
+              <gml:pos>17.52331034 -21.10381623</gml:pos>
+              <gml:pos>17.5065884 -21.11289021</gml:pos>
+              <gml:pos>17.5065884 -21.11289021</gml:pos>
+              <gml:pos>17.51235559 -21.10180313</gml:pos>
+              <gml:pos>17.51235559 -21.10180313</gml:pos>
+              <gml:pos>17.53048882 -21.09595839</gml:pos>
+              <gml:pos>17.53048882 -21.09595839</gml:pos>
+              <gml:pos>17.54747921 -21.09050994</gml:pos>
+              <gml:pos>17.54747921 -21.09050994</gml:pos>
+              <gml:pos>17.56244389 -21.10183175</gml:pos>
+              <gml:pos>17.56244389 -21.10183175</gml:pos>
+              <gml:pos>17.57087313 -21.10989946</gml:pos>
+              <gml:pos>17.57087313 -21.10989946</gml:pos>
+              <gml:pos>17.58919309 -21.11574583</gml:pos>
+              <gml:pos>17.58919309 -21.11574583</gml:pos>
+              <gml:pos>17.60766748 -21.11617065</gml:pos>
+              <gml:pos>17.60766748 -21.11617065</gml:pos>
+              <gml:pos>17.62672487 -21.11353883</gml:pos>
+              <gml:pos>17.62672487 -21.11353883</gml:pos>
+              <gml:pos>17.6449993 -21.11120085</gml:pos>
+              <gml:pos>17.6449993 -21.11120085</gml:pos>
+              <gml:pos>17.66364648 -21.10841095</gml:pos>
+              <gml:pos>17.66364648 -21.10841095</gml:pos>
+              <gml:pos>17.68074634 -21.11681503</gml:pos>
+              <gml:pos>17.68074634 -21.11681503</gml:pos>
+              <gml:pos>17.68718 -21.12020333</gml:pos>
+            </gml:LineString>
+          </sams:shape>
+        </sams:SF_SpatialSamplingFeature>
+      </om:featureOfInterest>
+      <om:result xlink:href="http://www.ifremer.fr/co/ego/ego/v2/sg558/sg558_20130601/" xsi:type="gml:ReferenceType"/>
+    </om:OM_Observation>
+  </sos:observation>
+</sos:InsertObservation>
