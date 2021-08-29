@@ -35,7 +35,7 @@ This script is organized as the following:
 
   Since this is only a prototype and the app is not hosted yet, The ObservedProperties files have been uploaded to Github
   
-  https://github.com/FadiMoubayed/GeoJSON-to-Observation-and-Measurements/tree/main/XML_Files/ObservedProperty
+  https://github.com/FadiMoubayed/GeoJSON-to-Observation-and-Measurements/tree/main/Example%20Files/3.%20XML%20Files/ObservedProperty
   
   ## To test with the Sensor Observation Service:
   - Run 52 North Sensor Observation Service implementation docker image (or deploy using Tomcat):
