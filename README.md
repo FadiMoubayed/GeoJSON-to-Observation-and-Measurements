@@ -27,7 +27,7 @@ This script is organized as the following:
   
   http://www.argodatamgt.org/content/download/30910/209488/file/argo-parameters-list-core-and-b_20210211.xlsx
 
-  For ease of use, the Excel file should be manually opened and the variable names and their links to the NERC vocabulary server should be saved and a csv file.
+  For ease of use, the Excel file should be manually opened and the variable names and their links to the NERC vocabulary server should be saved as a csv file.
 
   The csv file in addition to the metadata GeoJSON files should be copied to the resources folder in the relative path.
 
